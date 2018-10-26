@@ -22,7 +22,7 @@
     //-------------------------------------------------------------------------
     var KEY     = { ESC: 27, SPACE: 32, LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40 },
         DIR     = { UP: 0, RIGHT: 1, DOWN: 2, LEFT: 3, MIN: 0, MAX: 3 },
-        stats   = new Stats(),
+        //stats   = new Stats(),
         canvas  = get('canvas'),
         ctx     = canvas.getContext('2d'),
         ucanvas = get('upcoming'),
@@ -112,14 +112,14 @@
     // GAME LOOP
     //-------------------------------------------------------------------------
     function run() {
-      showStats(); // initialize FPS counter
+      //showStats(); // initialize FPS counter
       addEvents(); // attach keydown and resize events
       var last = now = timestamp();
       function frame() {
         now = timestamp();
         update(Math.min(1, (now - last) / 1000.0)); // using requestAnimationFrame have to be able to handle large delta's caused when it 'hibernates' in a background or non-visible tab
         draw();
-        stats.update();
+        //stats.update();
         last = now;
         requestAnimationFrame(frame, canvas);
       }
